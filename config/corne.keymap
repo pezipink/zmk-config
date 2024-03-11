@@ -44,6 +44,27 @@
             bindings = <&kp PIPE2 &kp GT>;
             label = "NEW_MACRO";
         };
+
+        arrow: arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS &kp GT>;
+            label = "ARROW";
+        };
+
+        fun: fun {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR &kp F &kp U &kp N &kp SPACE &kp X &kp SPACE &kp MINUS &kp GT &kp SPACE &kp RPAR>;
+            label = "FUN";
+        };
+
+        lam: lam {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp EQUAL &kp GT>;
+            label = "LAM";
+        };
     };
 
     keymap {
@@ -134,7 +155,7 @@
             bindings = <
 &trans  &kp EXCLAMATION             &kp MINUS                               &mt LS(NUMBER_3) ASTERISK       &kp SLASH                   &kp PLUS                &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &mt GREATER_THAN LESS_THAN  &mt RIGHT_PARENTHESIS LEFT_PARENTHESIS  &mt RIGHT_BRACKET LEFT_BRACKET  &mt RIGHT_BRACE LEFT_BRACE  &kp PERCENT             &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp PIPE2                   &kp AMPERSAND                           &kp DOUBLE_QUOTES               &kp COLON                   &kp NON_US_BACKSLASH    &trans  &pipe   &trans  &trans  &trans  &trans
+&trans  &kp PIPE2                   &kp AMPERSAND                           &kp DOUBLE_QUOTES               &kp COLON                   &kp NON_US_BACKSLASH    &lam    &pipe   &arrow  &fun    &trans  &trans
                                                                             &kp SEMICOLON                   &kp EQUAL                   &kp HASH                &trans  &trans  &trans
             >;
         };
