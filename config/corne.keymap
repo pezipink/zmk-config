@@ -37,6 +37,15 @@
         };
     };
 
+    macros {
+        pipe: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp PIPE &kp GT>;
+            label = "NEW_MACRO";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -123,10 +132,10 @@
 
         symbo {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &kp EXCLAMATION             &kp MINUS                               &mt LS(NUMBER_3) ASTERISK       &kp SLASH                   &kp PLUS                &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &mt GREATER_THAN LESS_THAN  &mt RIGHT_PARENTHESIS LEFT_PARENTHESIS  &mt RIGHT_BRACKET LEFT_BRACKET  &mt RIGHT_BRACE LEFT_BRACE  &kp PERCENT             &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp PIPE                    &kp AMPERSAND                           &kp DOUBLE_QUOTES               &kp COLON                   &kp NON_US_BACKSLASH    &trans  &pipe   &trans  &trans  &trans  &trans
+                                                                            &kp SEMICOLON                   &kp EQUAL                   &kp HASH                &trans  &trans  &trans
             >;
         };
 
